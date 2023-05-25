@@ -1,0 +1,661 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto:wght@300;400;700&display=swap");
+:root {
+  --link-size: 45px;
+  --trans-property: all 0.3s ease-in-out;
+}
+
+/*Comenzamos con buenas practicas😄*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Loader*/
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading img {
+  width: 40%;
+  height: 80%;
+}
+
+.animate-invisible {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 0.3s ease-out;
+}
+
+
+
+.animate-visible {
+  opacity: 1;
+}
+
+/*Header e index*/
+
+header .navbar .navbar-nav {
+  gap: 2rem;
+}
+header .navbar .navbar-nav li {
+  color: #fafafa;
+  list-style: none;
+  text-decoration: none;
+  font: bolder;
+  text-align: start;
+}
+header .navbar .navbar-nav li .nav-link {
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 835px) {
+  header .navbar .navbar-nav li .nav-link:hover {
+    transform: scale(1.1);
+  }
+}
+header .navbar .navbar-nav .nav-item:nth-child(2) {
+  transition: transform 0.3s ease-in-out;
+}
+
+.main_box {
+  text-align: center;
+  z-index: -2;
+}
+.main_box .card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.main_box .card-container .col {
+  display: flex;
+  justify-content: center;
+  /*Damos estilos al interior de las card*/
+}
+.main_box .card-container .col .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.main_box .card-container .col .card-body .btn-dark {
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  padding-bottom: 10px;
+  height: 2rem;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  cursor: pointer;
+}
+.main_box .card-container .col .card-body .btn-dark:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: left top right;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
+}
+.main_box .card-container .col .card-body .btn-dark:hover h6 {
+  color: #fafafa;
+}
+.main_box .card-container .col .card-body .btn-dark:hover:before {
+  transform: scaleY(1);
+}
+.main_box .card-container .col .card-body .btn-dark .text-comprar {
+  position: relative;
+  font-size: 1rem;
+  transition: 0.4s ease-out;
+}
+
+/*Comienzan los estilos del carrito*/
+
+/*Hora*/
+#hora {
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 40%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  #hora {
+    font-size: 36px;
+  }
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Estilos para el carrito de compras */
+.carrito {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carrito h1 {
+  font-size: 24px;
+}
+
+.carrito form {
+  margin-bottom: 20px;
+}
+
+.carrito label, .carrito select, .carrito input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.carrito select {
+  background-color: #f8f8f8;
+}
+
+.carrito button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carrito button:hover {
+  background-color: #45a049;
+}
+
+.carrito .total-amount {
+  font-weight: bold;
+  color: #333;
+}
+
+.carrito .btn {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .carrito {
+    padding: 10px;
+  }
+
+  .carrito h1 {
+    font-size: 20px;
+  }
+
+  .carrito h2 {
+    font-size: 18px;
+  }
+
+  .carrito h3 {
+    font-size: 16px;
+  }
+
+  .carrito ul li {
+    font-size: 14px;
+  }
+
+  .carrito select,
+  .carrito input {
+    font-size: 14px;
+  }
+
+  .carrito button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/*Comienzan los estilos del footer*/
+footer {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  color: #fafafa;
+  background-color: #26272b;
+  font-size: 15px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  /*le damos estilo de grid al footer para las 3 secciones*/
+}
+footer .elementfooter-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  /*Damos estilos a los medios de pago*/
+  /*Damos estilos a los links de navegacion*/
+  /*Damos estilos a los iconos de redes sociales*/
+}
+footer .elementfooter-box .elementfooter1 h6 {
+  color: #fafafa;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+footer .elementfooter-box .elementfooter1 .iconbox img {
+  height: 80px;
+  padding: 1rem;
+}
+footer .elementfooter-box .elementfooter2 h6 {
+  text-align: center;
+}
+footer .elementfooter-box .elementfooter2 .footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+footer .elementfooter-box .elementfooter2 .footer-links li a {
+  list-style: none;
+  text-decoration: none !important;
+  color: #737373;
+}
+footer .elementfooter-box .elementfooter2 .footer-links li a:hover {
+  color: #fafafa;
+  transform: scale(1.2);
+}
+footer .elementfooter-box .elementfooter3 h6 {
+  text-align: center;
+}
+footer .elementfooter-box .elementfooter3 .footer-links {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: var(--link-size);
+  height: var(--link-size);
+  margin: 8px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  transition: var(--trans-property);
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon i {
+  margin: auto;
+  font-size: 24px;
+  color: #67798e;
+  z-index: 1;
+  transition: var(--trans-property);
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon:after {
+  content: "";
+  width: var(--link-size);
+  height: var(--link-size);
+  position: absolute;
+  transform: translate(0, var(--link-size));
+  border-radius: 50%;
+  transition: var(--trans-property);
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon.twitter:hover {
+  color: white;
+  background-color: #1da1f2;
+  transition: all 0.2s linear;
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon.instagram:hover {
+  transition: all 0.2s linear;
+  color: white;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+footer .elementfooter-box .elementfooter3 .footer-links .social-icon.facebook:hover {
+  transition: all 0.2s linear;
+  background-color: #1769ff;
+  color: white;
+}
+footer .elementfooter-box .elementfooter3 .footer-links .fab {
+  font-size: 35px;
+  transition: all 0.5s linear;
+}
+footer .elementfooter-box .elementfooter3 .footer-links .fab:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+ul {
+  padding-left: 0;
+}
+
+/*Termina el menu de navageacion */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media (max-width: 568px) {
+  .card-body {
+    justify-content: center;
+  }
+}
+
+.copyright-text {
+  bottom: 30px;
+}
+
+/* REGISTRO.HTML*/
+.form-register {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #6f6f70;
+  padding: 12px;
+  background: #445170;
+  border-radius: 6px;
+}
+
+.controls {
+  height: 2.5rem;
+  width: 100%;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  border-radius: 15px;
+  padding-left: 12px;
+  text-align: start;
+  position: relative;
+}
+
+h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.main_container_register {
+  background-image: url(../img/Delantal\ de\ jean\ con\ cuero.jpg);
+  background-size: cover;
+  height: 1100px;
+}
+@media (max-width: 992px) {
+  .main_container_register .card-registro {
+    height: auto !important;
+  }
+}
+
+.main-contacto {
+  background-image: url(../img/Delantal\ de\ jean\ con\ cuero.jpg);
+  background-size: cover;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-chaquetas, .main-accesorios, .main-delantales {
+  background-image: url(../img/Delantal\ de\ jean\ con\ cuero.jpg);
+  background-size: cover;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-chaquetas .col, .main-accesorios .col, .main-delantales .col {
+  display: flex;
+  justify-content: center;
+}
+.main-chaquetas .col .btn-dark, .main-accesorios .col .btn-dark, .main-delantales .col .btn-dark {
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  padding-bottom: 10px;
+  height: 2rem;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  cursor: pointer;
+}
+.main-chaquetas .col .btn-dark:before, .main-accesorios .col .btn-dark:before, .main-delantales .col .btn-dark:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: left top right;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
+}
+.main-chaquetas .col .btn-dark:hover h6, .main-accesorios .col .btn-dark:hover h6, .main-delantales .col .btn-dark:hover h6 {
+  color: #fafafa;
+}
+.main-chaquetas .col .btn-dark:hover:before, .main-accesorios .col .btn-dark:hover:before, .main-delantales .col .btn-dark:hover:before {
+  transform: scaleY(1);
+}
+.main-chaquetas .col .btn-dark .text-comprar, .main-accesorios .col .btn-dark .text-comprar, .main-delantales .col .btn-dark .text-comprar {
+  position: relative;
+  font-size: 1rem;
+  transition: 0.4s ease-out;
+}
+
+.main-delantales .col {
+  display: flex;
+  justify-content: center;
+}
+.main-delantales .col .btn-dark {
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  padding-bottom: 10px;
+  height: 2rem;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  cursor: pointer;
+}
+.main-delantales .col .btn-dark:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: left top right;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
+}
+.main-delantales .col .btn-dark:hover h6 {
+  color: #fafafa;
+}
+.main-delantales .col .btn-dark:hover:before {
+  transform: scaleY(1);
+}
+.main-delantales .col .btn-dark .text-comprar {
+  position: relative;
+  font-size: 1rem;
+  transition: 0.4s ease-out;
+}
+
+.main-accesorios .col {
+  display: flex;
+  justify-content: center;
+}
+.main-accesorios .col .btn-dark {
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  padding-bottom: 10px;
+  height: 2rem;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  cursor: pointer;
+}
+.main-accesorios .col .btn-dark:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: left top right;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
+}
+.main-accesorios .col .btn-dark:hover h6 {
+  color: #fafafa;
+}
+.main-accesorios .col .btn-dark:hover:before {
+  transform: scaleY(1);
+}
+.main-accesorios .col .btn-dark .text-comprar {
+  position: relative;
+  font-size: 1rem;
+  transition: 0.4s ease-out;
+}
+
+.row-contacto {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(197, 192, 192, 0.623);
+  border-radius: 25px;
+  width: 50%;
+  gap: 20px;
+}
+.row-contacto iframe {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main_box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+  .elementfooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .iconbox img {
+    height: 60px;
+  }
+  .w-75 {
+    width: 90% !important;
+  }
+  .row-contacto {
+    width: 90%;
+    padding: 20px;
+  }
+  .main_container_register {
+    height: 900px;
+  }
+}
+.main-preguntas {
+  background: url(../img/Delantal\ de\ jean\ con\ cuero.jpg);
+  opacity: 0.8;
+  background-repeat: no-repeat;
+}
+
+.card {
+  height: 42rem;
+}
+
+@media (min-width: 768px) {
+  .p-md-5 {
+    padding: 0 !important;
+  }
+  #fcf-form {
+    width: 100%;
+  }
+}
+.container-chaquetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  height: auto;
+}
+.container-chaquetas h1 {
+  text-align: center;
+  background: rgba(202, 202, 202, 0.404);
+  color: rgb(253, 250, 250);
+  border: solid 0.5px;
+  border-radius: 30px;
+  margin: auto;
+  padding: 5px 15px;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  font-style: bolder;
+  text-align: start;
+}
+
+.dropdown {
+  z-index: 5;
+}
+
+@media (max-width: 620px) {
+  .card {
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

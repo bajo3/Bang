@@ -1,0 +1,26 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Camiseta",
+        "precio": 19.99,
+        "descripcion": "Una camiseta de algodón suave y cómoda.",
+        "imagen": "camiseta.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Pantalones",
+        "precio": 39.99,
+        "descripcion": "Pantalones casuales de mezclilla.",
+        "imagen": "pantalones.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Zapatos",
+        "precio": 59.99,
+        "descripcion": "Zapatos deportivos para correr.",
+        "imagen": "zapatos.jpg"
+      }
+    ]
+  }
+  
