@@ -18,11 +18,14 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: black;
 }
+
 
 .loading img {
   width: 40%;
   height: 80%;
+  border-radius: 50%;
 }
 
 .animate-invisible {
